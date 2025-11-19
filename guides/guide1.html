@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Networking Basics | Demo</title>
+    <title>Windows Optimization | Demo</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap"
         rel="stylesheet">
@@ -25,30 +25,58 @@
             </a>
         </div>
 
-        <h1>Networking Basics</h1>
+        <h1>Windows Optimization</h1>
 
-        <p>Networking is the backbone of the internet. Understanding how data moves from one point to another is crucial
-            for any developer.</p>
+        <p>Is your Windows PC feeling sluggish? Here are the essential steps to debloat, optimize, and speed up your
+            system for maximum performance.</p>
 
-        <h2>1. The OSI Model</h2>
-        <p>The Open Systems Interconnection (OSI) model describes seven layers that computer systems use to communicate
-            over a network.</p>
+        <h2>1. Debloat Windows</h2>
+        <p>Windows comes with a lot of pre-installed apps and telemetry that you don't need. The most effective way to
+            remove them is using a PowerShell script.</p>
+
+        <p>Open PowerShell as Administrator and run the following command to launch the Chris Titus Tech WinUtil (a
+            popular, safe community tool):</p>
 
         <div class="code-block">
-            7. Application (HTTP, FTP)
-            6. Presentation (SSL/TLS)
-            5. Session (APIs, Sockets)
-            4. Transport (TCP, UDP)
-            3. Network (IP, ICMP)
-            2. Data Link (Ethernet)
-            1. Physical (Cables, Wi-Fi)
+            irm christitus.com/win | iex
         </div>
 
-        <h2>2. IP Addresses & DNS</h2>
-        <p>Every device on a network has an IP address. DNS (Domain Name System) translates human-readable domain names
-            (like google.com) into these IP addresses.</p>
+        <p>From the utility, you can select "Tweaks" and choose "Desktop" or "Laptop" to automatically apply recommended
+            optimizations.</p>
 
-        <p>Stay tuned for more in-depth tutorials on subnetting and routing protocols.</p>
+        <h2>2. Disable Telemetry & Background Apps</h2>
+        <p>Stop Windows from sending data to Microsoft and running unnecessary apps in the background.</p>
+
+        <div class="code-block">
+            # Disable Telemetry
+            reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
+
+            # Disable Background Apps (Global)
+            reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" /v GlobalUserDisabled
+            /t REG_DWORD /d 1 /f
+        </div>
+
+        <h2>3. Optimize Power Plan</h2>
+        <p>Ensure your CPU is running at its full potential by enabling the "High Performance" or "Ultimate Performance"
+            power plan.</p>
+
+        <div class="code-block">
+            # Enable Ultimate Performance Mode
+            powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+        </div>
+
+        <p>After running this, go to <strong>Control Panel > Power Options</strong> and select "Ultimate Performance".
+        </p>
+
+        <h2>4. Clean Temporary Files</h2>
+        <p>Free up space and reduce clutter by clearing temp files.</p>
+
+        <div class="code-block">
+            # Clean Temp Folder
+            Remove-Item -Path $env:TEMP\* -Recurse -Force -ErrorAction SilentlyContinue
+        </div>
+
+        <p>Regular maintenance is key. Restart your PC once a week and keep your drivers updated!</p>
     </div>
 </body>
 
