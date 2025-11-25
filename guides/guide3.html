@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicetify Guide | Demo</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="overlay"></div>
+
+    <div class="content-page">
+        <div class="back-nav">
+            <a href="../index.html" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <h1 class="text-gradient-spotify">Spotify Unleashed 🎧</h1>
+
+        <p class="guide-subtitle">Make Spotify truly yours. Inject CSS, install custom themes, and extend functionality
+            with Spicetify.</p>
+
+        <h2>1. Quick Install</h2>
+        <p>Open PowerShell as <strong>Administrator</strong> and run this single command to install the CLI and
+            Marketplace:</p>
+
+        <div class="code-block">
+            iwr -useb https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.ps1 | iex
+            iwr -useb https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.ps1 | iex
+        </div>
+
+        <h2>2. Essential Commands</h2>
+        <div class="code-block">
+            spicetify apply # Apply changes (CSS/Config)
+            spicetify watch -s # Live preview CSS changes
+            spicetify backup apply # Use after Spotify updates
+            spicetify restore # Revert to stock Spotify
+        </div>
+
+        <h2>3. Must-Have Extensions</h2>
+        <p>Once the Marketplace is installed (look for the shopping cart icon in Spotify), search for these
+            game-changers:</p>
+        <ul style="color: #cbd5e1; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li><strong>Adblock</strong>: Blocks audio and banner ads (use at your own risk).</li>
+            <li><strong>Full App Display</strong>: Beautiful full-screen album art mode.</li>
+            <li><strong>Lyrics Plus</strong>: Synced lyrics from multiple sources (Genius, Musixmatch).</li>
+            <li><strong>Trashbin</strong>: Restore deleted playlists easily.</li>
+        </ul>
+
+        <h2>4. Top Themes</h2>
+        <p>Don't settle for the default look. Try these popular themes from the Marketplace:</p>
+        <ul style="color: #cbd5e1; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li><strong>Comfy</strong>: A cozy, rounded, and colorful interface.</li>
+            <li><strong>Dribbblish</strong>: A clean, modern redesign.</li>
+            <li><strong>Sleek</strong>: Minimalist and sharp.</li>
+        </ul>
+
+        <p><strong>Note:</strong> If Spotify updates and breaks Spicetify, just run <code>spicetify upgrade</code>
+            followed by <code>spicetify backup apply</code>.</p>
+    </div>
+</body>
+
+</html>

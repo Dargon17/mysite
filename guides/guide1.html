@@ -25,58 +25,69 @@
             </a>
         </div>
 
-        <h1>Windows Optimization</h1>
+        <h1 class="text-gradient-windows">Turbocharge Windows ⚡</h1>
 
-        <p>Is your Windows PC feeling sluggish? Here are the essential steps to debloat, optimize, and speed up your
-            system for maximum performance.</p>
+        <p class="guide-subtitle">Is your PC feeling sluggish? Debloat, optimize, and unlock maximum performance with
+            these essential tweaks.</p>
 
-        <h2>1. Debloat Windows</h2>
-        <p>Windows comes with a lot of pre-installed apps and telemetry that you don't need. The most effective way to
-            remove them is using a PowerShell script.</p>
+        <h2>1. The Ultimate Debloat Script</h2>
+        <p>Forget manual registry edits. The <strong>Chris Titus Tech WinUtil</strong> is the community gold standard
+            for Windows optimization. It aggregates the best tweaks into one safe, open-source tool.</p>
 
-        <p>Open PowerShell as Administrator and run the following command to launch the Chris Titus Tech WinUtil (a
-            popular, safe community tool):</p>
+        <p>Open PowerShell as <strong>Administrator</strong> and run:</p>
 
         <div class="code-block">
             irm christitus.com/win | iex
         </div>
 
-        <p>From the utility, you can select "Tweaks" and choose "Desktop" or "Laptop" to automatically apply recommended
-            optimizations.</p>
+        <p><strong>Recommended Settings:</strong></p>
+        <ul style="color: #cbd5e1; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Go to the <strong>Tweaks</strong> tab.</li>
+            <li>Select <strong>Desktop</strong> (or Laptop).</li>
+            <li>Click <strong>Run Tweaks</strong>. This will remove bloatware, disable telemetry, and optimize
+                background services.</li>
+        </ul>
 
-        <h2>2. Disable Telemetry & Background Apps</h2>
-        <p>Stop Windows from sending data to Microsoft and running unnecessary apps in the background.</p>
-
-        <div class="code-block">
-            # Disable Telemetry
-            reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f
-
-            # Disable Background Apps (Global)
-            reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" /v GlobalUserDisabled
-            /t REG_DWORD /d 1 /f
-        </div>
-
-        <h2>3. Optimize Power Plan</h2>
-        <p>Ensure your CPU is running at its full potential by enabling the "High Performance" or "Ultimate Performance"
-            power plan.</p>
+        <h2>2. Package Management with Winget</h2>
+        <p>Stop downloading installers from random websites. Use <code>winget</code>, Microsoft's official package
+            manager, to install and update software instantly.</p>
 
         <div class="code-block">
-            # Enable Ultimate Performance Mode
-            powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+            # Search for an app
+            winget search "firefox"
+
+            # Install an app
+            winget install Mozilla.Firefox
+
+            # Update ALL installed apps at once
+            winget upgrade --all
         </div>
 
-        <p>After running this, go to <strong>Control Panel > Power Options</strong> and select "Ultimate Performance".
-        </p>
-
-        <h2>4. Clean Temporary Files</h2>
-        <p>Free up space and reduce clutter by clearing temp files.</p>
+        <h2>3. Deep Cleaning & Driver Updates</h2>
+        <p>Keep your system lean and drivers fresh for maximum FPS and stability.</p>
 
         <div class="code-block">
-            # Clean Temp Folder
-            Remove-Item -Path $env:TEMP\* -Recurse -Force -ErrorAction SilentlyContinue
+            # Clean System Junk (Temp, Prefetch, Windows Update Cache)
+            cleanmgr /sagerun:1
+
+            # Check for corrupted system files
+            sfc /scannow
         </div>
 
-        <p>Regular maintenance is key. Restart your PC once a week and keep your drivers updated!</p>
+        <p><strong>Pro Tip:</strong> For graphics drivers, always use <a
+                href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank"
+                style="color: var(--accent-primary); text-decoration: none;">DDU (Display Driver Uninstaller)</a> when
+            upgrading your GPU or troubleshooting crashes.</p>
+
+        <h2>4. DNS Optimization</h2>
+        <p>Speed up your web browsing and improve privacy by switching to a faster DNS provider like Cloudflare or
+            Quad9.</p>
+
+        <div class="code-block">
+            # Set DNS to Cloudflare (1.1.1.1) for faster lookup
+            Set-DnsClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses
+            ("1.1.1.1","1.0.0.1")
+        </div>
     </div>
 </body>
 

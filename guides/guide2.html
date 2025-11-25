@@ -25,29 +25,50 @@
             </a>
         </div>
 
-        <h1>Linux Commands</h1>
+        <h1 class="text-gradient-linux">Terminal Sorcery 🧙‍♂️</h1>
 
-        <p>Mastering the command line is a superpower. Here are some essential Linux commands you should know.</p>
+        <p class="guide-subtitle">Mastering the command line is a superpower. Learn the spells to control your system
+            like a true wizard.</p>
 
-        <h2>File Management</h2>
+        <h2>File Manipulation</h2>
         <div class="code-block">
-            ls -la # List all files with details
-            cd directory # Change directory
-            mkdir new_dir # Create a new directory
-            rm file.txt # Remove a file
-            cp source dest # Copy a file
-            mv source dest # Move or rename a file
+            ls -lah # List all files with permissions & sizes
+            cp -r src dst # Copy directory recursively
+            mv file new # Rename or move file
+            rm -rf dir # Force remove directory (Careful!)
+            chmod +x file # Make a file executable
+            chown user:grp file # Change ownership
         </div>
 
-        <h2>System Info</h2>
+        <h2>System Monitoring</h2>
         <div class="code-block">
-            top # View running processes
-            df -h # Check disk space usage
-            free -m # Check memory usage
-            uname -a # Show system information
+            htop # Interactive process viewer (better than top)
+            df -h # Disk space in human-readable format
+            free -h # Memory usage
+            watch -n 1 "nvidia-smi" # Monitor GPU usage in real-time
         </div>
 
-        <p>Practice these commands to become comfortable with the terminal environment.</p>
+        <h2>Networking & Pipes</h2>
+        <div class="code-block">
+            ip a # Show IP addresses
+            ping 1.1.1.1 # Check connectivity
+            curl -I url # Fetch HTTP headers
+
+            # The Power of Pipes (|)
+            cat file.txt | grep "error" # Find "error" in file
+            ps aux | grep "python" # Find running python processes
+        </div>
+
+        <h2>Productivity Tricks</h2>
+        <div class="code-block">
+            !! # Run the last command again
+            sudo !! # Run the last command with sudo
+            ctrl + r # Search command history
+            alias ll="ls -lah" # Create a shortcut
+        </div>
+
+        <p><strong>Pro Tip:</strong> Install <code>tldr</code> (e.g., <code>sudo apt install tldr</code>) for simplified
+            man pages. Just type <code>tldr tar</code> to see examples!</p>
     </div>
 </body>
 
